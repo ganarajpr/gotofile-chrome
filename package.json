@@ -22,6 +22,7 @@
     "hmr"
   ],
   "dependencies": {
+    "chrome-promise": "^1.0.6",
     "react": "0.14.7"
   },
   "devDependencies": {

@@ -1,10 +1,10 @@
-var currentNode;
+var nodeData;
 document.addEventListener('contextmenu',(e)=>{
-  console.log('from extension',e.target.nodeName);
-  currentNode = e.target.nodeName;
+  console.log('from extension',e.target);
+  //data to be captured from e.target
+  nodeData = e.target.nodeName;
 });
 
 chrome.runtime.onMessage.addListener(function(message,sender,sendResponse){
-  console.log(message, currentNode);
-  sendResponse({data: currentNode});
+  sendResponse({data: nodeData});
 });
