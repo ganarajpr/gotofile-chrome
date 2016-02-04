@@ -11,16 +11,10 @@
     "persistent": true,
     "scripts": ["background/index.js"]
   },
-  "page_action": {
-    "default_title": "Webpack chrome extension popup action",
-    "default_popup": "popup/index.html"
-  },
-  "chrome_url_overrides" : {
-    "newtab": "newtab/index.html"
-  },
   "permissions": [
     "background",
-    "tabs"
+    "tabs",
+    "contextMenus"
   ],
   "icons": {
     "16": "icons/webpack-16.png",

@@ -1,5 +1,5 @@
 {
-  "name": "WebpackChromeExtension",
+  "name": "GoToFile",
   "version": "0.3.0",
   "description": "Bootstrap playground for developing Chrome extensions with all new features like Webpack, Babel, React and almost everything you want.",
   "private": true,

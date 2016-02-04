@@ -1,29 +1,15 @@
-import welcome from 'shared/welcome'
-
-welcome('background/index.js')
-
-// Setting popup icon
-
-// When we defined browser_action
-if(chrome.browserAction) {
-  chrome.browserAction.setIcon({
-    path: require("icons/webpack-38.png")
-  })
-
-// When we defined page_action
-} else if(chrome.pageAction) {
-
-  const showPageAction = function(tabId) {
-    chrome.pageAction.show(tabId);
-
-    chrome.pageAction.setIcon({
-      path: require("icons/webpack-38.png"),
-      tabId: tabId
-    })
+const CONTEXT_MENU_ID = 'gotofile';
+function onClick(event){
+  if(event.menuItemId === CONTEXT_MENU_ID){
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+        chrome.tabs.sendMessage(tabs[0].id, {action: "getdata"}, function(response) {
+          console.log(response);
+        });
+    });
   }
-
-  // Show page action on each page update
-  chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-    showPageAction(tabId)
-  });
 }
+chrome.contextMenus.onClicked.addListener(onClick);
+chrome.contextMenus.create({
+  "title": "Go To File",
+   "id": CONTEXT_MENU_ID
+ });
