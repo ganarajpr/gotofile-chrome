@@ -8,14 +8,13 @@ Extremely early stages of development - nothing to see here.
 
 
 ## Road map
-- [x] - ~~Communicate between content script and background script~~
-- [x] - ~~Handle context menu~~
-- [ ] - Connect to socket server and send data.
-- [ ] - Conditionally enable context menu if able to connect to socket server.
-- [ ] - Allow configuration of server port.
+- [x] - Communicate between content script and background script
+- [x] - Handle context menu
+- [x] - Connect to socket server and send data.
+- [x] - Conditionally enable context menu if able to connect to socket server.
+- [ ] - Allow configuration of server port (Optional)
 - [ ] - Read `data-*` from the current selected element.
 - [ ] - Read data from all parents of current selected element.
-- [ ] - Retry connection - over time - enable user button for retry.
 
 
 ## Licence
