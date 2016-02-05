@@ -8,7 +8,7 @@
     }
   ],
   "background": {
-    "persistent": true,
+    "persistent": false,
     "scripts": ["background/index.js"]
   },
   "permissions": [
