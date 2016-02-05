@@ -2,28 +2,27 @@ import ChromePromise from 'chrome-promise';
 import ws from 'socket.io-client';
 
 var socket = ws('http://localhost:5186');
-
+let contextMenuCreated = false;
 const CONTEXT_MENU_ID = 'gotofile';
 chrome.promise = new ChromePromise();
-/*
-let ws = new WebSocket('ws://localhost:5186');
 
-ws.onopen = function open() {
-  ws.send('something');
-  chrome.contextMenus.onClicked.addListener(onClick);
-  chrome.contextMenus.create({
-    "title": "Go To File",
-     "id": CONTEXT_MENU_ID
-   });
-};
-*/
 
 socket.on('connect', () => {
-  chrome.contextMenus.onClicked.addListener(onClick);
-  chrome.contextMenus.create({
-    "title": "Go To File",
-     "id": CONTEXT_MENU_ID
-   });
+  if(!contextMenuCreated){
+    chrome.contextMenus.create({
+      "title": "Go To File",
+       "id": CONTEXT_MENU_ID
+     });
+     chrome.contextMenus.onClicked.addListener(onClick);
+     contextMenuCreated = true;
+  }
+
+});
+
+
+socket.on('disconnect', function () {
+  chrome.contextMenus.removeAll();
+  contextMenuCreated = false;
 });
 
 socket.on('news', (data) => {
