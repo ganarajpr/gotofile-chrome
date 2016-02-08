@@ -1,7 +1,7 @@
 {
   "name": "GoToFile",
   "version": "0.3.0",
-  "description": "Bootstrap playground for developing Chrome extensions with all new features like Webpack, Babel, React and almost everything you want.",
+  "description": "Go to Source code file in your editor in one click from Chrome",
   "private": true,
   "scripts": {
     "start": "npm run dev",
