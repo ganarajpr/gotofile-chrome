@@ -1,6 +1,6 @@
 {
   "name": "GoToFile",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Go to Source code file in your editor in one click from Chrome",
   "private": true,
   "scripts": {
