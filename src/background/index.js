@@ -26,10 +26,6 @@ socket.on('disconnect', function () {
   contextMenuCreated = false;
 });
 
-socket.on('news', (data) => {
-  console.log(data);
-});
-
 function onClick(event){
   if(event.menuItemId === CONTEXT_MENU_ID){
       getActiveTab()
@@ -38,7 +34,8 @@ function onClick(event){
         })
         .then((response) => {
           //response contains the captured data
-          console.log(response);
+          console.log(response.data);
+          socket.emit('gotofile-data',response.data);
         })
   }
 }
