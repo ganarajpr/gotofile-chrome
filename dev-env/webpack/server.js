@@ -5,12 +5,12 @@ var WebpackDevServer = require('webpack-dev-server')
 
 module.exports = function(webpackConfig) {
   var host = "0.0.0.0",
-      port = 3001;
+      port = 3201;
 
   var compiler = webpack(webpackConfig);
 
   var webpackDevServerOptions = {
-    contentBase: 'https://localhost:3001',
+    contentBase: 'https://localhost:3201',
     publicPath: webpackConfig.output.publicPath,
     https: true,
     // lazy: true,

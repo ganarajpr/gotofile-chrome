@@ -58,7 +58,7 @@ function configGenerator(Manifest) {
 
       if(isDevelopment) {
         output.chunkFilename = '[name]-[chunkhash].js'
-        output.publicPath = 'https://localhost:3001/'
+        output.publicPath = 'https://localhost:3201/'
       }
 
       return output

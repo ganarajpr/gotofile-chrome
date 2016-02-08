@@ -23,6 +23,7 @@
   ],
   "dependencies": {
     "chrome-promise": "^1.0.6",
+    "jquery": "^2.2.0",
     "react": "0.14.7",
     "socket.io": "^1.4.5",
     "socket.io-client": "^1.4.5",

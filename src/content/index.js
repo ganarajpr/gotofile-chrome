@@ -1,10 +1,17 @@
-var nodeData;
+import $ from 'jquery';
+var sources;
 document.addEventListener('contextmenu',(e)=>{
-  console.log('from extension',e.target);
-  //data to be captured from e.target
-  nodeData = e.target.nodeName;
+  sources = [];
+  var currentElement = $(e.target);
+  sources.push(currentElement.data('source'));
+  currentElement.parentsUntil('html').each(function(index){
+    var src = $(this).data('source');
+    if(src){
+      sources.push(src);
+    }
+  });
 });
 
 chrome.runtime.onMessage.addListener(function(message,sender,sendResponse){
-  sendResponse({data: nodeData});
+  sendResponse({data: sources});
 });
