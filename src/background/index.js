@@ -11,7 +11,8 @@ socket.on('connect', () => {
   if(!contextMenuCreated){
     chrome.contextMenus.create({
       "title": "Go To File",
-       "id": CONTEXT_MENU_ID
+       "id": CONTEXT_MENU_ID,
+       "contexts": ['all']
      });
      chrome.contextMenus.onClicked.addListener(onClick);
      contextMenuCreated = true;
